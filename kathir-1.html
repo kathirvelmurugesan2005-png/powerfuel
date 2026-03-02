@@ -1,0 +1,331 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Power Fuel | Gym Supplements</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#111;
+color:white;
+}
+
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+padding:20px 8%;
+background:black;
+}
+
+.logo{
+color:#ff3c00;
+font-size:26px;
+font-weight:bold;
+}
+
+nav label{
+margin-left:20px;
+cursor:pointer;
+}
+
+nav label:hover{
+color:#ff3c00;
+}
+
+/* HIDE INPUTS */
+input[type=radio],
+input[type=checkbox]{
+display:none;
+}
+
+/* SECTIONS */
+section{
+display:none;
+padding:60px 8%;
+animation:fade .5s;
+}
+
+#home-tab:checked ~ .home,
+#product-tab:checked ~ .products,
+#cart-tab:checked ~ .cart,
+#login-tab:checked ~ .login{
+display:block;
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(10px);}
+to{opacity:1;}
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+/* CARD */
+.card{
+background:#1c1c1c;
+padding:20px;
+border-radius:10px;
+text-align:center;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 8px 20px rgba(255,60,0,.4);
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:10px;
+}
+
+/* BUTTON */
+.btn{
+padding:10px 20px;
+border-radius:5px;
+color:white;
+cursor:pointer;
+display:inline-block;
+margin-top:10px;
+}
+
+.buy{background:#ff3c00;}
+.cancel{background:gray;display:none}
+
+/* BUY → CANCEL TOGGLE */
+#p1:checked ~ .products .p1 .buy,
+#p2:checked ~ .products .p2 .buy,
+#p3:checked ~ .products .p3 .buy,
+#p4:checked ~ .products .p4 .buy,
+#p5:checked ~ .products .p5 .buy,
+#p6:checked ~ .products .p6 .buy,
+#p7:checked ~ .products .p7 .buy,
+#p8:checked ~ .products .p8 .buy,
+#p9:checked ~ .products .p9 .buy{
+display:none;
+}
+
+#p1:checked ~ .products .p1 .cancel,
+#p2:checked ~ .products .p2 .cancel,
+#p3:checked ~ .products .p3 .cancel,
+#p4:checked ~ .products .p4 .cancel,
+#p5:checked ~ .products .p5 .cancel,
+#p6:checked ~ .products .p6 .cancel,
+#p7:checked ~ .products .p7 .cancel,
+#p8:checked ~ .products .p8 .cancel,
+#p9:checked ~ .products .p9 .cancel{
+display:inline-block;
+}
+
+/* CART ITEMS */
+.cart-item{
+display:none;
+background:#1c1c1c;
+padding:15px;
+margin:10px 0;
+border-radius:8px;
+}
+
+#p1:checked ~ .cart .c1,
+#p2:checked ~ .cart .c2,
+#p3:checked ~ .cart .c3,
+#p4:checked ~ .cart .c4,
+#p5:checked ~ .cart .c5,
+#p6:checked ~ .cart .c6,
+#p7:checked ~ .cart .c7,
+#p8:checked ~ .cart .c8,
+#p9:checked ~ .cart .c9{
+display:block;
+}
+
+input{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:none;
+border-radius:5px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">PowerFuel </div>
+
+<nav>
+<label for="login-tab">Login</label>
+<label for="home-tab">Home</label>
+<label for="product-tab">Products</label>
+<label for="cart-tab">Cart</label>
+</nav>
+</header>
+
+<!-- TAB CONTROLS -->
+<input type="radio" name="tab" id="home-tab" checked>
+<input type="radio" name="tab" id="product-tab">
+<input type="radio" name="tab" id="cart-tab">
+<input type="radio" name="tab" id="login-tab">
+
+<!-- PRODUCT CHECKBOX -->
+<input type="checkbox" id="p1">
+<input type="checkbox" id="p2">
+<input type="checkbox" id="p3">
+<input type="checkbox" id="p4">
+<input type="checkbox" id="p5">
+<input type="checkbox" id="p6">
+<input type="checkbox" id="p7">
+<input type="checkbox" id="p8">
+<input type="checkbox" id="p9">
+
+<!-- LOGIN -->
+<section class="login">
+<div style="max-width:400px;margin:auto" class="card">
+<h2>Login</h2>
+<input placeholder="Username">
+<input type="password" placeholder="Password">
+<label for="home-tab" class="btn buy">Login</label>
+</div>
+</section>
+
+<!-- HOME -->
+<section class="home" align="center">
+
+<h1 style="color:#ff3c00;font-size:45px;">
+Welcome to PowerFuel
+</h1>
+
+<p style="margin-top:10px;">
+ Premium Gym Supplements to Boost Strength & Performance.
+</p>
+
+<br><br>
+
+<!-- SHOP NOW BUTTON -->
+<label for="product-tab" class="btn buy">
+Shop Now
+</label>
+
+</section>
+
+<!-- PRODUCTS -->
+<section class="products">
+
+<h2 style="color:#ff3c00;text-align:center">Products</h2>
+<br>
+
+<div class="grid">
+
+<div class="card p1">
+<img src=" c:\Users\poora\Pictures\whey protine.jpeg">
+<h3>Whey Protein</h3>
+<p>₹2499</p>
+<label for="p1" class="btn buy">Buy Now</label>
+<label for="p1" class="btn cancel">Cancel</label>
+</div>
+
+<div class="card p2">
+<img src="c:\Users\poora\Pictures\mass gainer.jpeg">
+<h3>Mass Gainer</h3>
+<p>₹1999</p>
+<label for="p2" class="btn buy">Buy Now</label>
+<label for="p2" class="btn cancel">Cancel</label>
+</div>
+
+<div class="card p3">
+<img src="c:\Users\poora\Pictures\creatine.jpeg">
+<h3>Creatine</h3>
+<p>₹1499</p>
+<label for="p3" class="btn buy">Buy Now</label>
+<label for="p3" class="btn cancel">Cancel</label>
+</div>
+
+<div class="card p4">
+<img src="c:\Users\poora\Pictures\fish oil.jpeg">
+<h3>Fish Oil</h3>
+<p>₹999</p>
+<label for="p4" class="btn buy">Buy Now</label>
+<label for="p4" class="btn cancel">Cancel</label>
+</div>
+
+<div class="card p5">
+<img src="c:\Users\poora\Pictures\munthiri.jpg">
+<h3>munthiri</h3>
+<p>₹1299</p>
+<label for="p5" class="btn buy">Buy Now</label>
+<label for="p5" class="btn cancel">Cancel</label>
+</div>
+
+<div class="card p6">
+<img src="c:\Users\poora\Pictures\badam.jpg">
+<h3>badam</h3>
+<p>₹1399</p>
+<label for="p6" class="btn buy">Buy Now</label>
+<label for="p6" class="btn cancel">Cancel</label>
+</div>
+
+<div class="card p7">
+<img src="c:\Users\poora\Pictures\oats.jpg">
+<h3>oats</h3>
+<p>₹499</p>
+<label for="p7" class="btn buy">Buy Now</label>
+<label for="p7" class="btn cancel">Cancel</label>
+</div>
+
+<div class="card p8">
+<img src="c:\Users\poora\Pictures\peanut butter.jpg">
+<h3>peanut butter</h3>
+<p>₹299</p>
+<label for="p8" class="btn buy">Buy Now</label>
+<label for="p8" class="btn cancel">Cancel</label>
+</div>
+
+<div class="card p9">
+<img src="c:\Users\poora\Pictures\dates.jpg">
+<h3>dates</h3>
+<p>₹359</p>
+<label for="p9" class="btn buy">Buy Now</label>
+<label for="p9" class="btn cancel">Cancel</label>
+</div>
+
+</div>
+</section>
+
+<!-- CART -->
+<section class="cart">
+
+<h2 style="color:#ff3c00">Your Cart</h2>
+
+<div class="cart-item c1">Whey Protein - ₹2499</div>
+<div class="cart-item c2">Mass Gainer - ₹1999</div>
+<div class="cart-item c3">Creatine - ₹1499</div>
+<div class="cart-item c4">Fish Oil - ₹999</div>
+<div class="cart-item c5">munthiri - ₹1299</div>
+<div class="cart-item c6">badam - ₹1399</div>
+<div class="cart-item c7">oats - ₹499</div>
+<div class="cart-item c8">peanut butter - ₹299</div>
+<div class="cart-item c9">dates - ₹359</div>
+
+</section>
+
+</body>
+</html>
